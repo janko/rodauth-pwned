@@ -1,6 +1,7 @@
 # rodauth-pwned
 
-[Rodauth] feature that checks user passwords against the [Pwned Passwords API].
+[Rodauth] feature that checks user passwords against the [Pwned Passwords API]
+(using the [Pwned] rubygem).
 
 ## Installation
 
