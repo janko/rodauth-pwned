@@ -88,6 +88,23 @@ plugin :rodauth do
 end
 ```
 
+### Warning users with pwned passwords
+
+If a user's password becomes pwned, you may want to warn them on login:
+
+```rb
+plugin :rodauth do
+  # ...
+  after_login do
+    db.after_commit do # better to make HTTP requests outside of transactions
+      if param_or_nil(password_param) && password_pwned?(param(password_param))
+        set_redirect_error_flash "Your password has previously appeared in a data breach and should never be used. We strongly recommend you change your password."
+      end
+    end
+  end
+end
+```
+
 ## Development
 
 Run tests with Rake:
