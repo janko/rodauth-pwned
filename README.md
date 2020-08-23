@@ -96,9 +96,9 @@ Run tests with Rake:
 $ bundle exec rake test
 ```
 
-## Contributing
+## Credits
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/janko/rodauth-pwned. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/janko/rodauth-pwned/blob/master/CODE_OF_CONDUCT.md).
+This gem has been inspired by [devise-pwned_password].
 
 ## License
 
@@ -111,3 +111,4 @@ Everyone interacting in the Rodauth::Pwned project's codebases, issue trackers, 
 [Rodauth]: https://github.com/jeremyevans/rodauth
 [Pwned Passwords API]: https://haveibeenpwned.com/Passwords
 [Pwned]: https://github.com/philnash/pwned
+[devise-pwned_password]: https://github.com/michaelbanfield/devise-pwned_password
