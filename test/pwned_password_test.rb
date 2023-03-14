@@ -104,4 +104,23 @@ describe "Rodauth pwned_password feature" do
     assert_equal "/", page.current_path
     assert_equal "Your account has been created", page.find("#notice_flash").text
   end
+
+  it "has translations" do
+    rodauth do
+      enable :pwned_password, :i18n, :create_account
+      require_login_confirmation? false
+      require_password_confirmation? false
+    end
+    roda do |r|
+      r.rodauth
+      r.root { view(content: "") }
+    end
+
+    visit "/create-account"
+    fill_in "Login", with: "foo@example.com"
+    fill_in "Password", with: "password"
+    click_on "Create Account"
+
+    assert_equal "invalid password, does not meet requirements (this password has previously appeared in a data breach and should never be used)", page.find("#password_error_message").text
+  end
 end

@@ -1,0 +1,3 @@
+en:
+  rodauth:
+    password_pwned_message: "this password has previously appeared in a data breach and should never be used"

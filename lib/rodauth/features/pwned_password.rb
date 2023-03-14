@@ -31,6 +31,11 @@ module Rodauth
       Pwned.pwned_count(password, pwned_request_options)
     end
 
+    def post_configure
+      super
+      i18n_register File.expand_path("#{__dir__}/../../../locales") if features.include?(:i18n)
+    end
+
     private
 
     def password_not_pwned?(password)
