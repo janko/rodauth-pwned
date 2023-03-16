@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
 
-  spec.files         = Dir["README.md", "LICENSE.txt", "*.gemspec", "lib/**/*"]
+  spec.files         = Dir["README.md", "LICENSE.txt", "*.gemspec", "lib/**/*", "locales/**/*"]
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rodauth", "~> 2.0"
